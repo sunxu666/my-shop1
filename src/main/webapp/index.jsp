@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ include file="/taglib.jsp"%>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +42,19 @@
         <div class="login-box-body">
             <p class="login-box-msg">欢迎来到登录界面</p>
             <form action="${pageContext.request.contextPath}/login" method="post">
+                <%--第一种判断--%>
+               <%-- <c:if test="${message != null}">
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            ${message}
+                    </div>
+                </c:if>--%>
+                    <%--第二种判断--%>
+                <div class="alert alert-danger alert-dismissible" ${message ==null ? "style='display:none;'" : ""}>
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    ${message}
+                </div>
+
                 <div class="form-group has-feedback">
                     <input name="email" type="email" class="form-control" placeholder="邮箱">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

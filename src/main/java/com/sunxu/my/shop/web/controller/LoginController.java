@@ -44,7 +44,8 @@ public class LoginController extends HttpServlet {
         }
         //admin为空时，登录失败
         else {
-            resp.sendRedirect("/fail.jsp");
+            req.setAttribute("message","用户名或密码错误");
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }
     }
 }
