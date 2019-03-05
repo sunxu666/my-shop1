@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
 
             logger.info("成功获取 \"{}\" 的用户信息",user.getUsername());
         }else{
-            logger.warn("获取\"{}\"的用户信息失败",user.getUsername());
+            logger.warn("获取\"{}\"的用户信息失败",email);
         }
 
         return user;

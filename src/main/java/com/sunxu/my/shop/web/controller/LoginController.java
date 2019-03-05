@@ -19,16 +19,32 @@ import java.io.IOException;
  * @since 1.0.0
  */
 public class LoginController extends HttpServlet {
-    private UserService userService = (UserService) SpringContext.context.getBean("userService");
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User admin = userService.login("sunxu@qq.com","sunxu");
+        UserService userService = (UserService) SpringContext.getBean("userService");
+        User admin = userService.login("sunxu@qq.com", "sunxu");
         System.out.println(admin);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
 
+        SpringContext context = new SpringContext();
+        UserService userService = (UserService) context.getBean("userService");
+        User admin = userService.login(email, password);
+        //admin不为空时，登录成功
+        if (admin != null) {
+            //分发到index.jsp ,跳转
+            //req.getRequestDispatcher("/index.jsp").forward(req, resp);
+            //重定向
+            resp.sendRedirect("/main.jsp");
+        }
+        //admin为空时，登录失败
+        else {
+            resp.sendRedirect("/fail.jsp");
+        }
     }
 }

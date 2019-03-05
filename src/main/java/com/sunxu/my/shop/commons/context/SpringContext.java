@@ -13,5 +13,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SpringContext {
     //获取spring-context.xml配置文件中的bean对象
-    public static ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+
+
+    public static Object getBean(String beanId){
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+        return context.getBean(beanId);
+    }
 }

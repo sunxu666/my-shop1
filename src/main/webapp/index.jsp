@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ include file="/taglib.jsp"%>--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +25,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+    </script>
 </head>
 <body class="hold-transition login-page">
     <!-- /.login-box begin-->
@@ -36,13 +39,13 @@
         <%--login头部 begin--%>
         <div class="login-box-body">
             <p class="login-box-msg">欢迎来到登录界面</p>
-            <form action="#" method="post">
+            <form action="${pageContext.request.contextPath}/login" method="post">
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="邮箱">
+                    <input name="email" type="email" class="form-control" placeholder="邮箱">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="密码">
+                    <input name="password" type="password" class="form-control" placeholder="密码">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">
