@@ -4,4 +4,9 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--Dao-->
+    <bean id="userDao" class="com.sunxu.my.shop.dao.impl.UserDaoImpl"/>
+    <!--Service-->
+    <bean id="userService" class="com.sunxu.my.shop.service.impl.UserServiceImpl"/>
+
 </beans>
