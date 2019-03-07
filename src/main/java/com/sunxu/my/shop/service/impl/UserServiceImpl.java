@@ -15,8 +15,9 @@ import com.sunxu.my.shop.service.UserService;
  */
 public class UserServiceImpl implements UserService {
 
+    private UserDao userDao = SpringContext.getBean("userDao");
     public User login(String email, String password) {
-        UserDao userDao = (UserDao) SpringContext.getBean("userDao");
+       // UserDao userDao = (UserDao) SpringContext.getBean("userDao");
         return userDao.getUserByEmailAndPassword(email,password);
     }
 }
