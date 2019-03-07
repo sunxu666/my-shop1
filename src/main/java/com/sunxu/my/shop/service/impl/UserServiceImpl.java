@@ -4,6 +4,7 @@ import com.sunxu.my.shop.commons.context.SpringContext;
 import com.sunxu.my.shop.dao.UserDao;
 import com.sunxu.my.shop.entity.User;
 import com.sunxu.my.shop.service.UserService;
+import org.springframework.stereotype.Service;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -13,6 +14,7 @@ import com.sunxu.my.shop.service.UserService;
  * @create 2019/3/5
  * @since 1.0.0
  */
+@Service(value = "userService")
 public class UserServiceImpl implements UserService {
 
     private UserDao userDao = SpringContext.getBean("userDao");

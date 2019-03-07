@@ -7,6 +7,8 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
+
 /**
  * 〈一句话功能简述〉<br>
  * 〈这个工具类唯一一个作用获取bean〉
@@ -15,6 +17,7 @@ import org.springframework.context.ApplicationContextAware;
  * @create 2019/3/5
  * @since 1.0.0
  */
+@Component
 public class SpringContext implements ApplicationContextAware, DisposableBean {
 
     private static final Logger logger = LoggerFactory.getLogger(SpringContext.class);

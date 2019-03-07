@@ -4,6 +4,7 @@ import com.sunxu.my.shop.dao.UserDao;
 import com.sunxu.my.shop.entity.User;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.springframework.stereotype.Repository;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -13,6 +14,7 @@ import org.slf4j.Logger;
  * @create 2019/3/5
  * @since 1.0.0
  */
+@Repository(value = "userDao")
 public class UserDaoImpl implements UserDao {
     //加载日志
     private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
